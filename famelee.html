@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fameleez | Premium Influencer Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        :root {
+            --brand-violet: #7C3AED;
+            --bg-dark: #070707;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #FFFFFF;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 30%, var(--brand-violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Animation */
+        .hero-glow {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        /* Portfolio Marquee */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-container {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        .marquee-wrapper:hover .marquee-container {
+            animation-play-state: paused;
+        }
+
+        .portfolio-card {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .portfolio-card:hover {
+            transform: scale(1.03) translateY(-15px);
+            border-color: var(--brand-violet);
+            box-shadow: 0 30px 60px -12px rgba(124, 58, 237, 0.3);
+        }
+
+        video {
+            transition: opacity 0.4s ease;
+            filter: brightness(0.7);
+        }
+
+        .portfolio-card:hover video {
+            opacity: 1;
+            filter: brightness(1.1);
+        }
+
+        .btn-primary {
+            background: var(--brand-violet);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 glass py-5 px-6 md:px-12 flex justify-between items-center" id="navbar">
+        <div class="text-2xl font-extrabold tracking-tighter italic">FAME<span class="text-violet-500">LEEZ</span></div>
+        <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] opacity-70">
+            <a href="#home" class="hover:text-violet-400 transition">Home</a>
+            <a href="#portfolio" class="hover:text-violet-400 transition">Portfolio</a>
+            <a href="#about" class="hover:text-violet-400 transition">About</a>
+            <a href="mailto:vikas.famelee@gmail.com" class="hover:text-violet-400 transition">Contact</a>
+        </div>
+        <a href="https://www.instagram.com/fameleez/" target="_blank" class="text-xl hover:text-violet-500 transition">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </nav>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+        <div class="hero-glow -top-20 -left-20"></div>
+        <div class="hero-glow bottom-0 -right-20"></div>
+        
+        <div class="text-center max-w-5xl z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/20 bg-violet-500/5 text-violet-400 text-xs font-bold uppercase tracking-widest mb-10">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+                </span>
+                Now managing elite talent
+            </div>
+            <h1 class="text-6xl md:text-[100px] font-extrabold mb-8 leading-[0.9] tracking-tighter">
+                Where Brands Meet <br><span class="gradient-text italic">Right Creators.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                Fameleez bridges the gap between high-ROI influencer campaigns and the world's most creative minds.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="mailto:vikas.famelee@gmail.com" class="btn-primary px-12 py-5 rounded-2xl font-bold text-lg w-full md:w-auto">Work With Us</a>
+                <a href="#portfolio" class="px-12 py-5 rounded-2xl border border-white/10 hover:bg-white/5 transition font-bold text-lg w-full md:w-auto">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-32 bg-zinc-950/50">
+        <div class="px-6 mb-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 italic">Recent Wins</h2>
+            <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-widest text-xs font-bold">Hover to see content in action</p>
+        </div>
+
+        <div class="marquee-wrapper relative overflow-hidden">
+            <div class="marquee-container flex gap-6 px-3" id="marquee">
+                </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-[32px] hover:bg-white/5 transition duration-500">
+                <div class="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center text-violet-500 mb-6 text-xl">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Fast Execution</h3>
+                <p class="text-gray-400 leading-relaxed">From brief to live in record time. We handle the sourcing, contracts, and logistics.</p>
+            </div>
+            <div class="glass p-10 rounded-[32px] hover:bg-white/5 transition duration-500">
+                <div class="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center text-violet-500 mb-6 text-xl">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Data Focused</h3>
+                <p class="text-gray-400 leading-relaxed">No vanity metrics. We focus on engagement rates and real conversion data.</p>
+            </div>
+            <div class="glass p-10 rounded-[32px] hover:bg-white/5 transition duration-500">
+                <div class="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center text-violet-500 mb-6 text-xl">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Verified Creators</h3>
+                <p class="text-gray-400 leading-relaxed">Only human-vetted creators with authentic audiences enter our network.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 border-t border-white/5 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-10 italic">Let's build impact.</h2>
+            <a href="mailto:vikas.famelee@gmail.com" class="text-2xl md:text-4xl font-light hover:text-violet-400 transition underline underline-offset-8">
+                vikas.famelee@gmail.com
+            </a>
+            
+            <div class="mt-20 flex flex-col items-center gap-6">
+                <a href="https://www.instagram.com/fameleez/" target="_blank" class="w-16 h-16 rounded-full glass flex items-center justify-center text-2xl hover:bg-violet-600 hover:text-white transition duration-500">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-30 font-bold">
+                    &copy; 2026 FAMELEEZ PLATFORM. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Professional Portfolio Content (Sample Videos)
+        const videos = [
+            "https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-light-dancing-and-listening-to-music-34440-large.mp4",
+            "https://assets.mixkit.co/videos/preview/mixkit-young-man-using-his-smartphone-in-the-dark-32616-large.mp4",
+            "https://assets.mixkit.co/videos/preview/mixkit-woman-working-out-in-the-gym-23450-large.mp4",
+            "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-working-on-a-laptop-at-home-34537-large.mp4"
+        ];
+
+        const marquee = document.getElementById('marquee');
+
+        function createCard(url) {
+            return `
+                <div class="portfolio-card glass w-72 h-[480px] rounded-[32px] overflow-hidden flex-shrink-0 border border-white/5">
+                    <video class="w-full h-full object-cover opacity-40" loop muted playsinline>
+                        <source src="${url}" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <div class="h-1 w-8 bg-violet-500 mb-4"></div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-violet-400">Campaign Live</p>
+                        <h4 class="text-lg font-bold">@FameleezTalent</h4>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Duplicate for infinite loop
+        marquee.innerHTML = [...videos, ...videos, ...videos].map(v => createCard(v)).join('');
+
+        // Hover Play Logic
+        const cards = document.querySelectorAll('.portfolio-card');
+        cards.forEach(card => {
+            const v = card.querySelector('video');
+            card.addEventListener('mouseenter', () => v.play());
+            card.addEventListener('mouseleave', () => {
+                v.pause();
+                v.currentTime = 0;
+            });
+        });
+
+        // Navbar interaction
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.style.padding = '1rem 3rem';
+                nav.style.background = 'rgba(7,7,7,0.9)';
+            } else {
+                nav.style.padding = '1.25rem 3rem';
+                nav.style.background = 'rgba(255,255,255,0.02)';
+            }
+        });
+    </script>
+</body>
+</html>
